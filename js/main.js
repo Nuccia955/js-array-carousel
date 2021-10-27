@@ -42,16 +42,33 @@ const textCollection = [
 
 //1. DOM refs 
 //1.1. refs to inner dinamic HTML
+const images = document.querySelector('.images');
+const thumbs = document.querySelector('.thumbs');
 
 //1.2. refs for active
 
-//2. add html div.images > image-container
+for (i = 0; i < imageCollection.length; i++) {
+    //2. add html div.images > image-container
+    images.innerHTML += `
+    <div class="image-container">
+        <img src="${imageCollection[i]}" alt="${titleCollection[i]}">
+        <div class="text">
+            <h3>${titleCollection[i]}</h3>
+            <p>${textCollection[i]}</p>
+        </div>
+    </div>`;
 
-//3. add html div.thumbs > thumb
+    //3. add html div.thumbs > thumb
+    thumbs.innerHTML += `
+    <div class="thumb">
+        <img src="${imageCollection[i]}" alt="${titleCollection[i]}">
+    </div>`;
+}
 
 //4. add click event on prev button --> class active
 
 //5. add click event on next button --> class active
+
 
 
 
