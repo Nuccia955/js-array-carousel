@@ -76,7 +76,7 @@ document.getElementsByClassName('thumb')[activeImage].classList.add('active');
 //5. add click event on next button --> class active
 const next = document.querySelector('.next');
 next.addEventListener('click', function() {
-    if (activeImage === imageCollection.lenght - 1) {
+    if (activeImage === imageCollection.length - 1) {
         activeImage = 0;
     } else {
         activeImage++;
@@ -91,7 +91,7 @@ next.addEventListener('click', function() {
 const prev = document.querySelector('.prev');
 prev.addEventListener('click', function() {
     if(activeImage === 0) {
-        activeImage = imageCollection.lenght - 1;
+        activeImage = imageCollection.length - 1;
     } else {
         activeImage--;
     }
