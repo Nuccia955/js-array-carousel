@@ -40,3 +40,18 @@ const textCollection = [
     'Et temporibus voluptatum suscipit tempore aliquid deleniti aut veniam inventore eligendi ex ad ullam,',
 ];
 
+//1. DOM refs 
+//1.1. refs to inner dinamic HTML
+
+//1.2. refs for active
+
+//2. add html div.images > image-container
+
+//3. add html div.thumbs > thumb
+
+//4. add click event on prev button --> class active
+
+//5. add click event on next button --> class active
+
+
+
