@@ -44,10 +44,13 @@ const textCollection = [
 //1.1. refs to inner dinamic HTML
 const images = document.querySelector('.images');
 const thumbs = document.querySelector('.thumbs');
+//const prev = document.querySelector('.prev');
+//const next = document.querySelector('.next');
 
 //1.2. refs for active
+let activeImage = 1;
 
-for (i = 0; i < imageCollection.length; i++) {
+for (let i = 0; i < imageCollection.length; i++) {
     //2. add html div.images > image-container
     images.innerHTML += `
     <div class="image-container">
@@ -63,11 +66,40 @@ for (i = 0; i < imageCollection.length; i++) {
     <div class="thumb">
         <img src="${imageCollection[i]}" alt="${titleCollection[i]}">
     </div>`;
+
 }
 
-//4. add click event on prev button --> class active
+//4. set active image and active thumb
+document.getElementsByClassName('image-container')[activeImage].classList.add('active');
+document.getElementsByClassName('thumb')[activeImage].classList.add('active');
 
 //5. add click event on next button --> class active
+const next = document.querySelector('.next');
+next.addEventListener('click', function() {
+    if (activeImage === imageCollection.lenght - 1) {
+        activeImage = 0;
+    } else {
+        activeImage++;
+    }
+    document.querySelector('.image-container.active').classList.remove('active');
+    document.getElementsByClassName('image-container')[activeImage].classList.add('active');
+    document.querySelector('.thumb.active').classList.remove('active');
+    document.getElementsByClassName('thumb')[activeImage].classList.add('active');
+})
+
+//6. add click event on prev button --> class active
+const prev = document.querySelector('.prev');
+prev.addEventListener('click', function() {
+    if(activeImage === 0) {
+        activeImage = imageCollection.lenght - 1;
+    } else {
+        activeImage--;
+    }
+    document.querySelector('.image-container.active').classList.remove('active');
+    document.getElementsByClassName('image-container')[activeImage].classList.add('active');
+    document.querySelector('.thumb.active').classList.remove('active');
+    document.getElementsByClassName('thumb')[activeImage].classList.add('active');
+})
 
 
 
